@@ -722,9 +722,9 @@ spec:
         - name: function_namespace
           value: "openfaas-fn"
         - name: read_timeout
-          value: "60s"
+          value: "600s"
         - name: write_timeout
-          value: "60s"
+          value: "600s"
         - name: image_pull_policy
           value: "IfNotPresent"
         - name: http_probe

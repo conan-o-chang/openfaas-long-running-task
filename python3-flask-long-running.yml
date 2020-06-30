@@ -7,4 +7,7 @@ functions:
     lang: python3-flask
     handler: ./python3-flask-long-running
     image: python3-flask-long-running:latest
-
+    environment:
+        RAW_BODY: "true"
+        read_timeout: 600s
+        write_timeout: 600s

@@ -1,0 +1,15 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:31112
+functions:
+  python3-flask-long-running:
+    lang: python3-flask
+    handler: ./python3-flask-long-running
+    image: python3-flask-long-running:latest
+    environment:
+        RAW_BODY: "true"
+        fprocess: gunicorn index:app -b 127.0.0.1:5000 --log-level debug --timeout=600 --graceful-timeout=600
+        read_timeout: 10s
+        write_timeout: 10s
+        exec_timeout: 600s

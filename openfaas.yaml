@@ -665,11 +665,11 @@ spec:
           timeoutSeconds: 5
         env:
         - name: read_timeout
-          value: "65s"
+          value: "650s"
         - name: write_timeout
-          value: "65s"
+          value: "650s"
         - name: upstream_timeout
-          value: "60s"
+          value: "600s"
         - name: functions_provider_url
           value: "http://127.0.0.1:8081/"
         - name: direct_functions

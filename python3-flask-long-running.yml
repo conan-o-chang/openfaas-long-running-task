@@ -9,5 +9,7 @@ functions:
     image: python3-flask-long-running:latest
     environment:
         RAW_BODY: "true"
+        fprocess: gunicorn index:app -b 127.0.0.1:5000 --log-level debug --timeout=600 --graceful-timeout=600
         read_timeout: 600s
         write_timeout: 600s
+        exec_timeout: 600s
